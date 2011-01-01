@@ -9,6 +9,7 @@ Class Global_controller extends Controller
         parent::__construct();
         
         loader::base_helper('head_tag');
+        loader::base_helper('body_tag');
         loader::base_helper('url');
         
     }

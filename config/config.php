@@ -13,15 +13,23 @@ defined('BASE') or exit('Access Denied!');
 |    Domain Root   "/"
 |
 */
-$config['base_url']              = "/obullo/";
+$config['base_url']              = '/framework/';
 
 /*
 |--------------------------------------------------------------------------
-| Source URL (Static Files)
+| Public URL (Static Files)
 |--------------------------------------------------------------------------
 |
 | URL to your Static Files.
-| http://static.example.com/public/
+| http://static.example.com/
+|
+*/
+$config['public_url']            = '/framework/';
+
+/*
+|--------------------------------------------------------------------------
+| Public Folder Name
+|--------------------------------------------------------------------------
 |
 |    /public
 |    /public/js
@@ -29,7 +37,7 @@ $config['base_url']              = "/obullo/";
 |    /public/images
 |
 */
-$config['public_url']            = "/obullo/public/";
+$config['public_folder']         = 'public';
 
 /*
 |--------------------------------------------------------------------------
@@ -116,7 +124,7 @@ $config['index_page']            = "index.php";
 | 'ORIG_PATH_INFO'  Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol']          = "AUTO";
+$config['uri_protocol']          = 'AUTO';
 
 /*
 |--------------------------------------------------------------------------
@@ -129,7 +137,7 @@ $config['uri_protocol']          = "AUTO";
 | Chapters / General Topics / Obullo Urls
 |
 */
-$config['url_suffix']            = "";
+$config['url_suffix']            = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -141,7 +149,7 @@ $config['url_suffix']            = "";
 | than english.
 |
 */
-$config['language']              = "english";
+$config['language']              = 'english';
 
 /*
 |--------------------------------------------------------------------------
@@ -152,7 +160,7 @@ $config['language']              = "english";
 | that require a character set to be provided.
 |
 */
-$config['charset']               = "UTF-8";
+$config['charset']               = 'UTF-8';
 
 /*
 |--------------------------------------------------------------------------
