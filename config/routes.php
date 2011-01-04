@@ -58,6 +58,5 @@ $routes['default_controller']    = "welcome";  // or welcome/controller name
 */
 $routes['index_method']          = "index";
 
-
 /* End of file routes.php */
 /* Location: .application/config/routes.php */

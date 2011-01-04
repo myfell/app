@@ -22,6 +22,7 @@ $config['base_url']              = '/framework/';
 |
 | URL to your Static Files.
 | http://static.example.com/
+| http://static.example.com/folder/
 |
 */
 $config['public_url']            = '/framework/';
@@ -35,7 +36,7 @@ $config['public_url']            = '/framework/';
 |    /public/js
 |    /public/css
 |    /public/images
-|
+|  
 */
 $config['public_folder']         = 'public';
 
@@ -220,6 +221,9 @@ $config['permitted_uri_chars']   = 'a-z 0-9~%.:_\-';
 | invoke your controllers and its functions:
 | example.com/index.php?d=directory&c=controller&m=function
 |
+| if subolder exist in your /controllers folder invoke this
+| example.com/index.php?d=directory&s=subfolder&c=controller&m=function
+|
 | Please note that some of the helpers won't work as expected when
 | this feature is enabled, since Obullo is designed primarily to
 | use segment based URLs.
@@ -227,6 +231,7 @@ $config['permitted_uri_chars']   = 'a-z 0-9~%.:_\-';
 */
 $config['enable_query_strings']  = TRUE;
 $config['directory_trigger']     = 'd';   
+$config['subfolder_trigger']     = 's';   
 $config['controller_trigger']    = 'c';
 $config['function_trigger']      = 'm';
 
@@ -260,7 +265,7 @@ $config['sess_cookie_name']      = 'ob_session';
 $config['sess_expiration']       = 7200;
 $config['sess_die_cookie']       = FALSE;
 $config['sess_encrypt_cookie']   = FALSE;
-$config['sess_driver']           = 'cookie';  // cookie | database
+$config['sess_driver']           = 'native';  // cookie | database
 $config['sess_db_var']           = 'db';            
 $config['sess_table_name']       = 'ob_sessions';
 $config['sess_match_ip']         = FALSE;
@@ -292,7 +297,7 @@ $config['cookie_time']           = (7 * 24 * 60 * 60) + time();
 | in your view files.  Options are TRUE or FALSE (boolean)
 |
 */
-$config['rewrite_short_tags']   = FALSE;
+$config['rewrite_short_tags']    = FALSE;
 
 /*
 |--------------------------------------------------------------------------
