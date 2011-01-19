@@ -22,7 +22,6 @@ $config['base_url']              = '/framework/';
 |
 | URL to your Static Files.
 | http://static.example.com/
-| http://static.example.com/folder/
 |
 */
 $config['public_url']            = '/framework/';
