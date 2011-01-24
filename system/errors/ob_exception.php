@@ -19,9 +19,13 @@ background-color: #F0F0F0;
 <b>File:</b> <?php echo $e->getFile(); ?> <br />
 <b>Line:</b> <?php echo $e->getLine(); ?>
 
-<?php if(! empty($sql)) { ?>
+<?php if( count($sql) > 0 ) { ?>
 
-<br /><b>SQL: </b> <?php echo $sql; ?>
+<?php foreach($sql as $query) { ?>
+
+<br /><b>SQL: </b> <?php echo $query; ?>
+
+<?php } ?>
 
 <?php } ?>
 
