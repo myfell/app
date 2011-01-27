@@ -7,7 +7,6 @@ defined('BASE') or exit('Access Denied!');
 |--------------------------------------------------------------------------
 */
 $database['system']['active_record'] = FALSE;
-$database['default'] = 'db';
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +43,19 @@ $database['db2']['dbh_port'] = "";
 $database['db2']['char_set'] = "utf8";
 $database['db2']['dsn']      = "";
 $database['db2']['options']  = array();
+
+
+$database['db_common']['hostname'] = "localhost";
+$database['db_common']['username'] = "root";
+$database['db_common']['password'] = "";
+$database['db_common']['database'] = "example_db";
+$database['db_common']['dbdriver'] = "mysql";
+$database['db_common']['dbh_port'] = "";
+$database['db_common']['char_set'] = "utf8";
+$database['db_common']['dsn']      = "";
+$database['db_common']['options']  = array();  // Example:  array( PDO::ATTR_PERSISTENT => false , 
+                                        //                  PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true 
+                                        //           ); 
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

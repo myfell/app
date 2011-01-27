@@ -7,6 +7,8 @@ Class App_Controller
     {         
         loader::base_helper('view');
 
+        // $this->output->profiler();
+        
         // view_set_folder('view_layout', 'layouts');  // you can set directory for view functions.
     } 
 }
