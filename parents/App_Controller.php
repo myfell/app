@@ -9,7 +9,7 @@ Class App_Controller
 
         // $this->output->profiler();
         
-        // view_set_folder('view_layout', 'layouts');  // you can set directory for view functions.
+        view_set_folder('view_layout', 'layouts');  // you can set directory for view functions.
     } 
 }
 
