@@ -63,6 +63,17 @@ $config['log_threshold']         = 0;
 
 /*
 |--------------------------------------------------------------------------
+| Enable / Disable Advanced Debugging
+|--------------------------------------------------------------------------
+|
+| Enabling advanced debug mode will help you to easy development, if it is
+| enabled Obullo will give you more details about application errors.
+|
+*/
+$config['debug_backtrace']       = TRUE;
+
+/*
+|--------------------------------------------------------------------------
 | Error Logging Directory Path
 |--------------------------------------------------------------------------
 |
