@@ -52,17 +52,35 @@ if(config_item('debug_backtrace'))
 
     $debug_traces = error_debug_backtrace($e);
 
-    if(isset($debug_traces[0]))
+    foreach($debug_traces as $key => $val)
+    {
+        if( ! isset($val['file']) OR ! isset($val['line']))
+        {
+            unset($debug_traces[$key]);  // If not file and line info
+        }
+    }
+    
+    if(isset($debug_traces[0]['file']) AND isset($debug_traces[0]['line']))
     {
         if($debug_traces[0]['file'] == $e->getFile() AND $debug_traces[0]['line'] == $e->getLine())
         {
             unset($debug_traces[0]);
+            
+            $unset = TRUE;
+        } 
+        else 
+        {
+            $unset = FALSE;
         }
-
+        
         if(isset($debug_traces[1]['file']) AND isset($debug_traces[1]['line'])) 
         { 
             foreach($debug_traces as $key => $trace) 
             { 
+                if($unset == FALSE)
+                {
+                    $key = $key + 1;
+                }
         ?>  
                 <span class="errorfile" style="line-height: 1.8em;">
                 <a href="javascript:void(0);" onclick="Obullo_Error_Toggle('error_toggle_' + <?php echo $key?>);"><?php echo error_secure_path($trace['file']); echo ' ( '?><?php echo ' Line : '.$trace['line'].' ) '; ?></a>
@@ -76,7 +94,7 @@ if(config_item('debug_backtrace'))
                 
                 // ------------------------------------------------------------------------
                 ?>
-        
+                 
     <?php   } // end foreach ?>
 
     <?php }   // end if isset ?>     
