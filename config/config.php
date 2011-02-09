@@ -41,6 +41,30 @@ $config['public_folder']         = 'public';
 
 /*
 |--------------------------------------------------------------------------
+| Enable / Disable Displaying Errors
+|--------------------------------------------------------------------------
+|  
+| Obullo use error_reporting function default as error_reporting(0), however
+| Obullo can catch all php errors and show them friendly, if you don't want
+| to display Obullo Errors you can set display errors configuration to
+| FALSE. 
+|
+*/
+$config['display_errors']        = TRUE;    
+
+/*
+|--------------------------------------------------------------------------
+| Enable / Disable Advanced Debugging
+|--------------------------------------------------------------------------
+|
+| Enabling advanced debug mode will help you to easy development, if it is
+| enabled Obullo will give you more details about application errors.
+|
+*/
+$config['debug_backtrace']       = TRUE;
+
+/*
+|--------------------------------------------------------------------------
 | Error Logging Threshold
 |--------------------------------------------------------------------------
 |
@@ -60,17 +84,6 @@ $config['public_folder']         = 'public';
 |
 */
 $config['log_threshold']         = 2;
-
-/*
-|--------------------------------------------------------------------------
-| Enable / Disable Advanced Debugging
-|--------------------------------------------------------------------------
-|
-| Enabling advanced debug mode will help you to easy development, if it is
-| enabled Obullo will give you more details about application errors.
-|
-*/
-$config['debug_backtrace']       = TRUE;
 
 /*
 |--------------------------------------------------------------------------

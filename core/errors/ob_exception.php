@@ -2,7 +2,7 @@
 #exception_content {
 font-family: verdana;
 font-size:12;
-width:60%;
+width:99%;
 padding:5px;
 background-color: #F0F0F0;
 }
@@ -17,6 +17,7 @@ background: none;
 border: none; 
 line-height: none; 
 }
+#exception_content span.collapse { display: none; }
 #exception_content pre.source span.line { display: block; }
 #exception_content pre.source span.highlight { background: #E0E0E0; }
 #exception_content pre.source span.line span.number { color: none; }
@@ -81,16 +82,18 @@ if(config_item('debug_backtrace'))
                 {
                     $key = $key + 1;
                 }
+                
+                $prefix = uniqid().'_';
         ?>  
                 <span class="errorfile" style="line-height: 1.8em;">
-                <a href="javascript:void(0);" onclick="Obullo_Error_Toggle('error_toggle_' + <?php echo $key?>);"><?php echo error_secure_path($trace['file']); echo ' ( '?><?php echo ' Line : '.$trace['line'].' ) '; ?></a>
+                <a href="javascript:void(0);" onclick="Obullo_Error_Toggle('error_toggle_' + '<?php echo $prefix.$key?>');"><?php echo error_secure_path($trace['file']); echo ' ( '?><?php echo ' Line : '.$trace['line'].' ) '; ?></a>
                 </span>
         
                 <?php 
                 // Show source codes foreach files
                 // ------------------------------------------------------------------------
                 
-                echo error_write_file_source($trace['file'], $trace['line'], $key);
+                echo error_write_file_source($trace['file'], $trace['line'], $key, $prefix);
                 
                 // ------------------------------------------------------------------------
                 ?>
@@ -124,6 +127,8 @@ function Obullo_Element()
 function Obullo_Error_Toggle(obj)
 {
     var el = Obullo_Element(obj);
-    el.style.display = (el.style.display != 'none' ? 'none' : '' );
+    // el.style.display = (el.style.display != 'none' ? 'none' : '' );
+    el.className = (el.className != 'collapse' ? 'collapse' : '' );
+    
 }
 </script>
