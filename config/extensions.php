@@ -15,3 +15,9 @@ $extensions['sample']['enabled']         = FALSE;
 $extensions['sample']['lib_override']    = '';
 $extensions['sample']['helper_override'] = '';
 $extensions['sample']['public_folder']   = 'public'; 
+
+
+
+
+/* End of file extensions.php */
+/* Location: ./application/config/extensions.php */
