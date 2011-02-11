@@ -50,7 +50,7 @@ $config['public_folder']         = 'public';
 | FALSE. 
 |
 */
-$config['display_errors']        = FALSE;    
+$config['display_errors']        = TRUE;    
 
 /*
 |--------------------------------------------------------------------------
