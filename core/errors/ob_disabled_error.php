@@ -2,7 +2,7 @@
 <head>
 <title>Error</title>
 <style type="text/css">
-#error_general  {
+#error_no_display  {
 font-family: verdana;
 font-size:12;
 width:99%;
@@ -13,8 +13,8 @@ background-color: #F0F0F0;
 </head>
 <body>
 
-<div id="error_general">
-<b>[<?php echo $heading; ?>]:</b> <?php echo $message; ?>        
+<div id="error_no_display">
+<b>[Service not available]:</b> Sorry we are experiencing technical difficulties.       
 </div>
 
 </body>
