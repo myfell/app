@@ -17,7 +17,16 @@ background: none;
 border: none; 
 line-height: none; 
 }
-#exception_content span.collapse { display: none; }
+#exception_content div.collapsed { display: none; }
+#exception_content div.arguments { }
+#exception_content div.arguments table { 
+font-family: verdana; 
+font-size:12; 
+border-collapse: collapse; 
+border-spacing: 0; 
+background: #E0E0E0;  
+}
+#exception_content div.arguments table  td { text-align: left; padding: 5px; border: 1px solid #ccc; }
 #exception_content pre.source span.line { display: block; }
 #exception_content pre.source span.highlight { background: #E0E0E0; }
 #exception_content pre.source span.line span.number { color: none; }
@@ -46,13 +55,15 @@ if(config_item('debug_backtrace'))
 {
     // Show source code
     // ------------------------------------------------------------------------
-
-    echo error_write_file_source($e->getFile(), $e->getLine());
+    $e_trace['file'] = $e->getFile();
+    $e_trace['line'] = $e->getLine();
+    
+    echo error_write_file_source($e_trace);
     
     // ------------------------------------------------------------------------
 
     $debug_traces = error_debug_backtrace($e);
-
+    
     foreach($debug_traces as $key => $val)
     {
         if( ! isset($val['file']) OR ! isset($val['line']))
@@ -78,13 +89,57 @@ if(config_item('debug_backtrace'))
         { 
             foreach($debug_traces as $key => $trace) 
             { 
+                $prefix = uniqid().'_';
+                
+                if(isset($trace['class'])) 
+                {
+                    $class_info = $trace['class'];
+                    $class_info.= (isset($trace['function'])) ? '->'. $trace['function'] : '';
+                    
+                    if(isset($trace['args']))
+                    {
+                        if(count($trace['args']) > 0)
+                        {
+                            $class_info.= '(<a href="javascript:void(0);" ';
+                            $class_info.= 'onclick="Obullo_Error_Toggle(\'arg_toggle_'.$prefix.$key.'\');">';
+                            $class_info.= 'arg';
+                            $class_info.= '</a>)'; 
+                            
+                            $class_info.= '<div id="arg_toggle_'.$prefix.$key.'" class="collapsed">';
+                            $class_info.= '<div class="arguments">';
+                            
+                            $class_info.= '<table>';
+                            foreach($trace['args'] as $arg_key => $arg_val)
+                            {
+                                $class_info.= '<tr>';
+                                $class_info.= '<td>'.$arg_key.'</td>';
+                                $class_info.= '<td>'.error_dump_argument($arg_val).'</td>';
+                                $class_info.= '</tr>'; 
+                            }
+                            $class_info.= '</table>';
+                            
+                            $class_info.= '</div>';
+                            $class_info.= '</div>';
+                        }
+                        else
+                        {
+                            $class_info.= (isset($trace['function'])) ? '()' : '';     
+                        }
+                    }
+                    else
+                    {
+                        $class_info.= (isset($trace['function'])) ? '()' : '';    
+                    }
+                    
+                    echo '<div class="error_file" style="line-height: 2em;">'.$class_info.'</div>';
+                }
+                
                 if($unset == FALSE)
                 {
                     $key = $key + 1;
                 }
+                ?>
                 
-                $prefix = uniqid().'_';
-        ?>  
                 <span class="errorfile" style="line-height: 1.8em;">
                 <a href="javascript:void(0);" onclick="Obullo_Error_Toggle('error_toggle_' + '<?php echo $prefix.$key?>');"><?php echo error_secure_path($trace['file']); echo ' ( '?><?php echo ' Line : '.$trace['line'].' ) '; ?></a>
                 </span>
@@ -93,7 +148,7 @@ if(config_item('debug_backtrace'))
                 // Show source codes foreach files
                 // ------------------------------------------------------------------------
                 
-                echo error_write_file_source($trace['file'], $trace['line'], $key, $prefix);
+                echo error_write_file_source($trace, $key, $prefix);
                 
                 // ------------------------------------------------------------------------
                 ?>
@@ -128,7 +183,7 @@ function Obullo_Error_Toggle(obj)
 {
     var el = Obullo_Element(obj);
     // el.style.display = (el.style.display != 'none' ? 'none' : '' );
-    el.className = (el.className != 'collapse' ? 'collapse' : '' );
+    el.className = (el.className != 'collapsed' ? 'collapsed' : '' );
     
 }
 </script>

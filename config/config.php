@@ -46,11 +46,19 @@ $config['public_folder']         = 'public';
 |  
 | Obullo use error_reporting function default as error_reporting(0), however
 | Obullo can catch all php errors and show them friendly, if you don't want
-| to display Obullo Errors you can set display errors configuration to
-| FALSE. 
+| to display Obullo Error Handler you can set it to -1.
+|   
+|  -1 - Disable Obullo error handle, use native php
+|   0 - Turn off all error reporting (0)
+|   1 - All errors (E_ALL);
+|   2 - Running errors  (E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR)
+|   3 - Running errors + notices (E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_NOTICE)
+|   4 - All errors except notices and warnings (E_ALL ^ (E_NOTICE | E_WARNING))
+|   5 - All errors except notices (E_ALL ^ E_NOTICE);
+|   6 - All errors except strict errors (E_ALL ^ E_STRICT);
 |
 */
-$config['display_errors']        = TRUE;    
+$config['error_reporting']       = 0;    
 
 /*
 |--------------------------------------------------------------------------
