@@ -41,24 +41,27 @@ $config['public_folder']         = 'public';
 
 /*
 |--------------------------------------------------------------------------
-| Enable / Disable Displaying Errors
+| Obullo Error Handler Enable / Disable Displaying Errors
 |--------------------------------------------------------------------------
 |  
 | Obullo use error_reporting function default as error_reporting(0), however
 | Obullo can catch all php errors and show them friendly, if you don't want
-| to display Obullo Error Handler you can set it to -1.
+| to use Obullo Error Handler you can set it to -1.
 |   
-|  -1 - Disable Obullo error handle, use native php
+|  -1 - Disable Obullo error handler, use native php
 |   0 - Turn off all error reporting (0)
 |   1 - All errors (E_ALL);
-|   2 - Running errors  (E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR)
-|   3 - Running errors + notices (E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_NOTICE)
-|   4 - All errors except notices and warnings (E_ALL ^ (E_NOTICE | E_WARNING))
-|   5 - All errors except notices (E_ALL ^ E_NOTICE);
-|   6 - All errors except strict errors (E_ALL ^ E_STRICT);
+|   String - Custom Regex Mode
+|
+|   Regex Examples:
+|   Running errors  E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR
+|   Running errors + notices E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_NOTICE
+|   All errors except notices and warnings E_ALL ^ (E_NOTICE | E_WARNING)
+|   All errors except notices E_ALL ^ E_NOTICE
+|   All errors except strict errors E_ALL ^ E_STRICT
 |
 */
-$config['error_reporting']       = 0;    
+$config['error_reporting']       = 1;    
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +72,7 @@ $config['error_reporting']       = 0;
 | enabled Obullo will give you more details about application errors.
 |
 */
-$config['debug_backtrace']       = TRUE;
+$config['debug_backtrace']       = array('enabled' => TRUE, 'padding' => 4);
 
 /*
 |--------------------------------------------------------------------------

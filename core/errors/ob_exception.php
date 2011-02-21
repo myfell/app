@@ -33,6 +33,32 @@ background: #E0E0E0;
 #exception_content pre.source span.line span.number { color: none; }
 </style>
 
+<script type="text/javascript">
+function Obullo_Element() 
+{
+    var elements = new Array();
+    
+    for (var i = 0; i < arguments.length; i++) 
+    {
+        var element = arguments[i];
+        if (typeof element == 'string')
+            element = document.getElementById(element);
+        if (arguments.length == 1)
+            return element;
+        elements.push(element);
+    }
+    return elements;
+}
+
+function Obullo_Error_Toggle(obj)
+{
+    var el = Obullo_Element(obj);
+    // el.style.display = (el.style.display != 'none' ? 'none' : '' );
+    el.className = (el.className != 'collapsed' ? 'collapsed' : '' );
+    
+}
+</script>
+
 <div id="exception_content">
 
 <b>(<?php echo $type; ?>): </b> <?php echo $e->getMessage(); ?> <br />
@@ -51,7 +77,9 @@ if(count($sql) > 0)
 <span class="errorfile"><?php echo error_secure_path($e->getFile()) ?><? echo $code; ?><? echo ' ( Line : '.$e->getLine().' ) '; ?></span>
 
 <?php 
-if(config_item('debug_backtrace')) 
+$debug = config_item('debug_backtrace');
+
+if($debug['enabled']) 
 {
     // Show source code
     // ------------------------------------------------------------------------
@@ -161,29 +189,3 @@ if(config_item('debug_backtrace'))
 <?php }   // end if debug backtrace ?>
 
 </div>
-
-<script type="text/javascript">
-function Obullo_Element() 
-{
-    var elements = new Array();
-    
-    for (var i = 0; i < arguments.length; i++) 
-    {
-        var element = arguments[i];
-        if (typeof element == 'string')
-            element = document.getElementById(element);
-        if (arguments.length == 1)
-            return element;
-        elements.push(element);
-    }
-    return elements;
-}
-
-function Obullo_Error_Toggle(obj)
-{
-    var el = Obullo_Element(obj);
-    // el.style.display = (el.style.display != 'none' ? 'none' : '' );
-    el.className = (el.className != 'collapsed' ? 'collapsed' : '' );
-    
-}
-</script>
