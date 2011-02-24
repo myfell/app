@@ -94,7 +94,7 @@ $config['debug_backtrace']       = array('enabled' => TRUE, 'padding' => 4);
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold']         = 2;
+$config['log_threshold']         = 0;
 
 /*
 |--------------------------------------------------------------------------
