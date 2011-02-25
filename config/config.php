@@ -13,7 +13,7 @@ defined('BASE') or exit('Access Denied!');
 |    Domain Root   "/"
 |
 */
-$config['base_url']              = '/framework/';
+$config['base_url']              = '/';
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +24,7 @@ $config['base_url']              = '/framework/';
 | http://static.example.com/
 |
 */
-$config['public_url']            = '/framework/';
+$config['public_url']            = '/';
 
 /*
 |--------------------------------------------------------------------------
@@ -50,15 +50,25 @@ $config['public_folder']         = 'public';
 |   
 |  -1 - Disable Obullo error handler, use native php
 |   0 - Turn off all error reporting (0)
-|   1 - All errors (E_ALL);
+|   1 - All errors  = E_ALL | OB_EXCEPTION;
 |   String - Custom Regex Mode
 |
-|   Regex Examples:
-|   Running errors  E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR
-|   Running errors + notices E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_NOTICE
-|   All errors except notices and warnings E_ALL ^ (E_NOTICE | E_WARNING)
-|   All errors except notices E_ALL ^ E_NOTICE
-|   All errors except strict errors E_ALL ^ E_STRICT
+|   Custom Regex Examples:
+|
+|   Running errors
+|       $config['error_reporting'] = 'E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR';
+|   
+|   Running errors + notices
+|       $config['error_reporting'] = 'E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_NOTICE';
+|   
+|   All errors except notices and warnings
+|       $config['error_reporting'] = 'E_ALL ^ (E_NOTICE | E_WARNING)';
+|   
+|   All errors except strict errors and Obullo exceptions
+|       $config['error_reporting'] = 'E_ALL ^ (E_NOTICE | OB_EXCEPTION)';
+|       
+|   All errors except notices 
+|       $config['error_reporting'] = 'E_ALL ^ E_NOTICE';  
 |
 */
 $config['error_reporting']       = 1;    

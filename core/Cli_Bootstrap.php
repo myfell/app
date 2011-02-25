@@ -22,14 +22,18 @@ defined('BASE') or exit('Access Denied!');
 */
 date_default_timezone_set('GMT');
 
-/**
+ /**
 |--------------------------------------------------------------------------
-| Native PHP Error Handler (Default On)
+| Native PHP Error Handler (Default Off) 
 |--------------------------------------------------------------------------
-| For Obullo Cli operations php native error handler default on.
+| For security reasons its default off.
+| Default Obullo error handle active also you don't want to use Obullo
+| development error handler you can turn off it easily from 
+| application/config.php file.
 |
 */                                   
-error_reporting(E_ALL | E_STRICT);
+error_reporting(E_ALL | E_STRICT); 
+error_reporting(0);
 
 /**
 |--------------------------------------------------------------------------
@@ -70,6 +74,13 @@ set_time_limit(0);
 */
 ini_set('memory_limit', '1000M');
 
+/**
+|--------------------------------------------------------------------------
+| Set Command Line Server Headers
+|--------------------------------------------------------------------------
+*/ 
+$_SERVER['HTTP_USER_AGENT']     = 'Obullo Command Line';
+$_SERVER['HTTP_ACCEPT_CHARSET'] = 'utf-8';
 
 
 // Put your functions here ..     
