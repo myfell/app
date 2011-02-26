@@ -50,7 +50,7 @@ $config['public_folder']         = 'public';
 |   
 |  -1 - Disable Obullo error handler, use native php
 |   0 - Turn off all error reporting (0)
-|   1 - All errors  = E_ALL | OB_EXCEPTION;
+|   1 - All errors  = E_ALL;
 |   String - Custom Regex Mode
 |
 |   Custom Regex Examples:
@@ -104,18 +104,22 @@ $config['debug_backtrace']       = array('enabled' => TRUE, 'padding' => 4);
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold']         = 0;
+$config['log_threshold']         = 2;
 
 /*
 |--------------------------------------------------------------------------
-| Error Logging Directory Path
+| Error Logging Directory Paths
 |--------------------------------------------------------------------------
 |
 | Leave this BLANK unless you would like to set something other than the default
-| base/logs/ folder.  Use a full server path with trailing slash.
-|
+| application/logs/ folder.  ( Use a full server path with trailing slash. )
+| 
+| Command Line Task's log files default path is
+| applicat/logs/cmd/
+|                  
 */
 $config['log_path']              = '';
+$config['cmd_log_path']          = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -209,24 +213,14 @@ $config['charset']               = 'UTF-8';
 
 /*
 |--------------------------------------------------------------------------
-| Class Extension Prefix
+| Class / Helper Extension Prefix
 |--------------------------------------------------------------------------
 |
-| This item allows you to set the filename/classname prefix when extending
-| native libraries.  For more information please see the user guide.
+| This item allows you to set the classname/helpername prefix when extending
+| native libraries / helpers. For more information please see the user guide.
 |
 */
 $config['subclass_prefix']       = 'MY_';
-
-/*
-|--------------------------------------------------------------------------
-| Helper Extension Prefix
-|--------------------------------------------------------------------------
-|
-| This item allows you to set the filename prefix when extending
-| native helpers.  For more information please see the user guide.
-|
-*/
 $config['subhelper_prefix']      = 'my_';
 
 /*
