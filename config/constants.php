@@ -1,6 +1,7 @@
 <?php
 defined('BASE') or exit('Access Denied!');  
 
+
 // put your application constants here.
                                                           
 

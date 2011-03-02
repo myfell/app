@@ -37,7 +37,6 @@ background: #E0E0E0;
 function Obullo_Element() 
 {
     var elements = new Array();
-    
     for (var i = 0; i < arguments.length; i++) 
     {
         var element = arguments[i];
@@ -53,9 +52,7 @@ function Obullo_Element()
 function Obullo_Error_Toggle(obj)
 {
     var el = Obullo_Element(obj);
-    // el.style.display = (el.style.display != 'none' ? 'none' : '' );
     el.className = (el.className != 'collapsed' ? 'collapsed' : '' );
-    
 }
 </script>
 
@@ -89,16 +86,19 @@ if($debug['enabled'])
     echo error_write_file_source($e_trace);
     
     // ------------------------------------------------------------------------
-
-    $debug_traces = error_debug_backtrace($e);
     
-    foreach($debug_traces as $key => $val)
+    $full_traces = error_debug_backtrace($e);
+
+    $debug_traces = array();
+    foreach($full_traces as $key => $val)
     {
-        if( ! isset($val['file']) OR ! isset($val['line']))
-        {
-            unset($debug_traces[$key]);  // If not file and line info
+        if( isset($val['file']) AND isset($val['line']))
+        {   
+            $debug_traces[] = $val;
         }
-    }
+    } 
+    
+    // print_r($debug_traces); exit;
     
     if(isset($debug_traces[0]['file']) AND isset($debug_traces[0]['line']))
     {
@@ -115,19 +115,29 @@ if($debug['enabled'])
         
         if(isset($debug_traces[1]['file']) AND isset($debug_traces[1]['line'])) 
         { 
+            $class_info = '';
             foreach($debug_traces as $key => $trace) 
-            { 
+            {                    
                 $prefix = uniqid().'_';
-                
-                if(isset($trace['class'])) 
-                {
-                    $class_info = $trace['class'];
-                    $class_info.= (isset($trace['function'])) ? '->'. $trace['function'] : '';
+
+                if(isset($trace['file'])) 
+                {                        
+                    $class_info = '';
                     
-                    if(isset($trace['args']))
+                    if(isset($trace['class']) AND isset($trace['function']))
                     {
+                        $class_info.= $trace['class'] .'->'. $trace['function'];  
+                    }
+                    
+                    if( ! isset($trace['class']) AND isset($trace['function']))
+                    {
+                        $class_info.= $trace['function']; 
+                    }
+                    
+                    if(isset($trace['args']))  
+                    {       
                         if(count($trace['args']) > 0)
-                        {
+                        {                  
                             $class_info.= '(<a href="javascript:void(0);" ';
                             $class_info.= 'onclick="Obullo_Error_Toggle(\'arg_toggle_'.$prefix.$key.'\');">';
                             $class_info.= 'arg';
@@ -161,7 +171,7 @@ if($debug['enabled'])
                     
                     echo '<div class="error_file" style="line-height: 2em;">'.$class_info.'</div>';
                 }
-                
+
                 if($unset == FALSE)
                 {
                     $key = $key + 1;

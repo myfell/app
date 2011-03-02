@@ -82,7 +82,7 @@ $config['error_reporting']       = 1;
 | enabled Obullo will give you more details about application errors.
 |
 */
-$config['debug_backtrace']       = array('enabled' => TRUE, 'padding' => 4);
+$config['debug_backtrace']       = array('enabled' => TRUE, 'padding' => 5);
 
 /*
 |--------------------------------------------------------------------------

@@ -13,30 +13,6 @@ defined('BASE') or exit('Access Denied!');
 
 /**
 |--------------------------------------------------------------------------
-| Set Default Time Zone Identifer.
-|--------------------------------------------------------------------------
-|                                                                 
-| Set the default timezone identifier for date function ( Server Time )
-| @see  http://www.php.net/manual/en/timezones.php
-| 
-*/
-date_default_timezone_set('GMT');
-
- /**
-|--------------------------------------------------------------------------
-| Native PHP Error Handler (Default Off) 
-|--------------------------------------------------------------------------
-| For security reasons its default off.
-| Default Obullo error handle active also you don't want to use Obullo
-| development error handler you can turn off it easily from 
-| application/config.php file.
-|
-*/                                   
-error_reporting(E_ALL | E_STRICT); 
-error_reporting(0);
-
-/**
-|--------------------------------------------------------------------------
 | Disable Deprecated Zend Mode
 |--------------------------------------------------------------------------
 |
