@@ -13,6 +13,14 @@ defined('BASE') or exit('Access Denied!');
 
 /**
 |--------------------------------------------------------------------------
+| Set Command Line Server Headers
+|--------------------------------------------------------------------------
+*/ 
+$_SERVER['HTTP_USER_AGENT']     = 'Obullo Command Line';
+$_SERVER['HTTP_ACCEPT_CHARSET'] = 'utf-8';
+
+/**
+|--------------------------------------------------------------------------
 | Disable Deprecated Zend Mode
 |--------------------------------------------------------------------------
 |
@@ -49,14 +57,6 @@ set_time_limit(0);
 | 
 */
 ini_set('memory_limit', '1000M');
-
-/**
-|--------------------------------------------------------------------------
-| Set Command Line Server Headers
-|--------------------------------------------------------------------------
-*/ 
-$_SERVER['HTTP_USER_AGENT']     = 'Obullo Command Line';
-$_SERVER['HTTP_ACCEPT_CHARSET'] = 'utf-8';
 
 
 // Put your functions here ..     

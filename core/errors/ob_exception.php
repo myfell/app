@@ -24,7 +24,7 @@ font-family: verdana;
 font-size:12; 
 border-collapse: collapse; 
 border-spacing: 0; 
-background: #E0E0E0;  
+background: #fff;  
 }
 #exception_content div.arguments table  td { text-align: left; padding: 5px; border: 1px solid #ccc; }
 #exception_content pre.source span.line { display: block; }
