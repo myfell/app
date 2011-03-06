@@ -1,3 +1,7 @@
+<html>
+<head>
+<title>Exception</title>
+
 <style type="text/css">
 #exception_content {
 font-family: verdana;
@@ -26,7 +30,8 @@ border-collapse: collapse;
 border-spacing: 0; 
 background: #fff;  
 }
-#exception_content div.arguments table  td { text-align: left; padding: 5px; border: 1px solid #ccc; }
+#exception_content div.arguments table td { text-align: left; padding: 5px; border: 1px solid #ccc; }
+#exception_content div.arguments table td .object_name { color: blue; }
 #exception_content pre.source span.line { display: block; }
 #exception_content pre.source span.highlight { background: #E0E0E0; }
 #exception_content pre.source span.line span.number { color: none; }
@@ -55,7 +60,9 @@ function Obullo_Error_Toggle(obj)
     el.className = (el.className != 'collapsed' ? 'collapsed' : '' );
 }
 </script>
+</head>
 
+<body>
 <div id="exception_content">
 
 <b>(<?php echo $type; ?>): </b> <?php echo $e->getMessage(); ?> <br />
@@ -78,7 +85,7 @@ $debug = config_item('debug_backtrace');
 
 if($debug['enabled']) 
 {
-    // Show source code
+    // Show source code for first exception trace
     // ------------------------------------------------------------------------
     $e_trace['file'] = $e->getFile();
     $e_trace['line'] = $e->getLine();
@@ -96,9 +103,7 @@ if($debug['enabled'])
         {   
             $debug_traces[] = $val;
         }
-    } 
-    
-    // print_r($debug_traces); exit;
+    }
     
     if(isset($debug_traces[0]['file']) AND isset($debug_traces[0]['line']))
     {
@@ -172,10 +177,7 @@ if($debug['enabled'])
                     echo '<div class="error_file" style="line-height: 2em;">'.$class_info.'</div>';
                 }
 
-                if($unset == FALSE)
-                {
-                    $key = $key + 1;
-                }
+                if($unset == FALSE) { ++$key; }
                 ?>
                 
                 <span class="errorfile" style="line-height: 1.8em;">
@@ -183,7 +185,7 @@ if($debug['enabled'])
                 </span>
         
                 <?php 
-                // Show source codes foreach files
+                // Show source codes foreach traces
                 // ------------------------------------------------------------------------
                 
                 echo error_write_file_source($trace, $key, $prefix);
@@ -199,3 +201,5 @@ if($debug['enabled'])
 <?php }   // end if debug backtrace ?>
 
 </div>
+</body>
+</html>

@@ -71,7 +71,7 @@ $config['public_folder']         = 'public';
 |       $config['error_reporting'] = 'E_ALL ^ E_NOTICE';  
 |
 */
-$config['error_reporting']       = 1;    
+$config['error_reporting']       = 1;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,7 +119,6 @@ $config['log_threshold']         = 2;
 |                  
 */
 $config['log_path']              = '';
-$config['cmd_log_path']          = '';
 
 /*
 |--------------------------------------------------------------------------
