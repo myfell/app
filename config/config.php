@@ -80,6 +80,8 @@ $config['error_reporting']       = 1;
 |
 | Enabling advanced debug mode will help you to easy development, if it is
 | enabled Obullo will give you more details about application errors.
+| For Object dump you will need 32M php memory.To dumping large objects
+| increase your memory_limit from your php.ini file.
 |
 */
 $config['debug_backtrace']       = array('enabled' => TRUE, 'padding' => 5);
