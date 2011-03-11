@@ -1,7 +1,3 @@
-<html>
-<head>
-<title>Exception</title>
-
 <style type="text/css">
 #exception_content {
 font-family: verdana;
@@ -60,9 +56,7 @@ function Obullo_Error_Toggle(obj)
     el.className = (el.className != 'collapsed' ? 'collapsed' : '' );
 }
 </script>
-</head>
 
-<body>
 <div id="exception_content">
 
 <b>(<?php echo $type; ?>): </b> <?php echo $e->getMessage(); ?> <br />
@@ -74,7 +68,7 @@ if(count($sql) > 0)
     {
         echo '<span class="errorfile"><b>('.$db.') SQL:</b> '.$query.'</span>';
     }
-} 
+}
 ?>
 <?php $code = ($e->getCode() != 0) ? ' Code : '. $e->getCode() : ''; ?> 
 
@@ -201,5 +195,3 @@ if($debug['enabled'])
 <?php }   // end if debug backtrace ?>
 
 </div>
-</body>
-</html>
