@@ -48,7 +48,6 @@ $config['public_folder']         = 'public';
 | Obullo can catch all php errors and show them friendly, if you don't want
 | to use Obullo Error Handler you can set it to -1.
 |   
-|  -1 - Disable Obullo error handler, use native php
 |   0 - Turn off all error reporting (0)
 |   1 - All errors  = E_ALL;
 |   String - Custom Regex Mode
