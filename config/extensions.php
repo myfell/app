@@ -27,9 +27,9 @@ $extensions['application']['sample2']['lib_override']    = array();
 $extensions['application']['sample2']['helper_override'] = array();
 
 
-$extensions['welcome']['error_mail']['enabled']         = FALSE;
-$extensions['welcome']['error_mail']['lib_override']    = array();
-$extensions['welcome']['error_mail']['helper_override'] = array('request', 'url');
+$extensions['welcome']['error_mail']['enabled']         = TRUE;
+$extensions['welcome']['error_mail']['lib_override']    = array('Exception');
+$extensions['welcome']['error_mail']['helper_override'] = array('error');
 
 
 /* End of file config.php */
