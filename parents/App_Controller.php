@@ -5,7 +5,7 @@ Class App_Controller
 {   
     function __autoloader()
     {         
-        loader::base_helper('view');
+        loader::helper('ob/view');
 
         // $this->output->profiler();
         
