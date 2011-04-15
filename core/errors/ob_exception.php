@@ -77,7 +77,7 @@ if(count($sql) > 0)
 <?php 
 $debug = config_item('debug_backtrace');
 
-if($debug['enabled']) 
+if($debug['enabled'] === TRUE) 
 {
     // Show source code for first exception trace
     // ------------------------------------------------------------------------

@@ -85,6 +85,11 @@ $config['error_reporting']       = 1;
 */
 $config['debug_backtrace']       = array('enabled' => TRUE, 'padding' => 5);
 
+//@todo
+// array('enabled' => 'E_ALL ^ E_NOTICE')
+// for notice errors process continue so we can reach the memory limit thats 
+// why we need to close backtracing.
+
 /*
 |--------------------------------------------------------------------------
 | Error Logging Threshold
