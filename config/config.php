@@ -45,14 +45,13 @@ $config['public_folder']         = 'public';
 |--------------------------------------------------------------------------
 |  
 | Obullo use error_reporting function default as error_reporting(0), however
-| Obullo can catch all php errors and show them friendly, if you don't want
-| to use Obullo Error Handler you can set it to -1.
+| Obullo can catch all php errors and show them friendly.
 |   
 |   0 - Turn off all error reporting (0)
 |   1 - All errors  = E_ALL;
 |   String - Custom Regex Mode
 |
-|   Custom Regex Examples:
+|   Regex Examples:
 |
 |   Running errors
 |       $config['error_reporting'] = 'E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR';
@@ -62,9 +61,6 @@ $config['public_folder']         = 'public';
 |   
 |   All errors except notices and warnings
 |       $config['error_reporting'] = 'E_ALL ^ (E_NOTICE | E_WARNING)';
-|   
-|   All errors except strict errors and Obullo exceptions
-|       $config['error_reporting'] = 'E_ALL ^ (E_NOTICE | OB_EXCEPTION)';
 |       
 |   All errors except notices 
 |       $config['error_reporting'] = 'E_ALL ^ E_NOTICE';  
@@ -83,12 +79,7 @@ $config['error_reporting']       = 1;
 | increase your memory_limit from your php.ini file.
 |
 */
-$config['debug_backtrace']       = array('enabled' => TRUE, 'padding' => 5);
-
-//@todo
-// array('enabled' => 'E_ALL ^ E_NOTICE')
-// for notice errors process continue so we can reach the memory limit thats 
-// why we need to close backtracing.
+$config['debug_backtrace']       = array('enabled' => 'E_ALL ^ E_NOTICE', 'padding' => 5);
 
 /*
 |--------------------------------------------------------------------------

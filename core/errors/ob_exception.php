@@ -77,7 +77,13 @@ if(count($sql) > 0)
 <?php 
 $debug = config_item('debug_backtrace');
 
-if($debug['enabled'] === TRUE) 
+$rules  = error_parse_regex($debug['enabled']);
+$e_code = $e->getCode();
+$errors = error_get_defined_errors();
+
+$allowed_errors = error_get_allowed_errors($rules);  // Check debug enabled for current error.
+
+if($debug['enabled'] === TRUE OR isset($allowed_errors[$e_code])) 
 {
     // Show source code for first exception trace
     // ------------------------------------------------------------------------
