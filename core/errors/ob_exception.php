@@ -81,9 +81,9 @@ $rules  = error_parse_regex($debug['enabled']);
 $e_code = $e->getCode();
 $errors = error_get_defined_errors();
 
-$allowed_errors = error_get_allowed_errors($rules);  // Check debug enabled for current error.
+$allowed_errors = error_get_allowed_errors($rules);  
 
-if($debug['enabled'] === TRUE OR isset($allowed_errors[$e_code])) 
+if($debug['enabled'] === TRUE OR is_string($debug['enabled'])) 
 {
     // Show source code for first exception trace
     // ------------------------------------------------------------------------
@@ -91,6 +91,11 @@ if($debug['enabled'] === TRUE OR isset($allowed_errors[$e_code]))
     $e_trace['line'] = $e->getLine();
     
     echo error_write_file_source($e_trace);
+    
+    if( ! isset($allowed_errors[$e_code]))   // Check debug_backtrace enabled for current error. 
+    {
+        echo '</div>'; return;
+    }
     
     // ------------------------------------------------------------------------
     

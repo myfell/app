@@ -79,7 +79,7 @@ $config['error_reporting']       = 1;
 | increase your memory_limit from your php.ini file.
 |
 */
-$config['debug_backtrace']       = array('enabled' => 'E_ALL ^ E_NOTICE', 'padding' => 5);
+$config['debug_backtrace']       = array('enabled' => 'E_ALL ^ (E_NOTICE | E_WARNING)', 'padding' => 5);
 
 /*
 |--------------------------------------------------------------------------
