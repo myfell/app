@@ -59,14 +59,11 @@ $config['public_folder']         = 'public';
 |   Running errors + notices
 |       $config['error_reporting'] = 'E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_NOTICE';
 |   
-|   All errors except notices and warnings
-|       $config['error_reporting'] = 'E_ALL ^ (E_NOTICE | E_WARNING)';
+|   All errors except notices, warnings, exceptions and database errors
+|       $config['error_reporting'] = 'E_ALL ^ (E_NOTICE | E_WARNING | E_EXCEPTION | E_DATABASE)';
 |       
 |   All errors except notices 
 |       $config['error_reporting'] = 'E_ALL ^ E_NOTICE';
-|
-|   All errors except exceptions
-|       $config['error_reporting'] = 'E_ALL ^ E_EXCEPTION';  
 |
 */
 $config['error_reporting']       = 1;

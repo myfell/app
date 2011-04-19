@@ -83,7 +83,7 @@ if($debug['enabled'] === TRUE OR $debug['enabled'] == 1)  // Covert to readable 
 } 
 
 $rules  = error_parse_regex($debug['enabled']);
-$e_code = $e->getCode();
+$e_code = (substr($e->getMessage(),0,3) == 'SQL') ? 'SQL' : $e->getCode(); 
 $errors = error_get_defined_errors();
 
 $allowed_errors = error_get_allowed_errors($rules);  
