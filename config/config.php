@@ -63,7 +63,10 @@ $config['public_folder']         = 'public';
 |       $config['error_reporting'] = 'E_ALL ^ (E_NOTICE | E_WARNING)';
 |       
 |   All errors except notices 
-|       $config['error_reporting'] = 'E_ALL ^ E_NOTICE';  
+|       $config['error_reporting'] = 'E_ALL ^ E_NOTICE';
+|
+|   All errors except exceptions
+|       $config['error_reporting'] = 'E_ALL ^ E_EXCEPTION';  
 |
 */
 $config['error_reporting']       = 1;
