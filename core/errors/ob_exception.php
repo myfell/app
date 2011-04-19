@@ -75,7 +75,12 @@ if(count($sql) > 0)
 <span class="errorfile"><?php echo error_secure_path($e->getFile()) ?><? echo $code; ?><? echo ' ( Line : '.$e->getLine().' ) '; ?></span>
 
 <?php 
-$debug = config_item('debug_backtrace');
+$debug  = config_item('debug_backtrace');
+
+if($debug['enabled'] === TRUE OR $debug['enabled'] == 1)  // Covert to readable format
+{
+    $debug['enabled'] = 'E_ALL';
+} 
 
 $rules  = error_parse_regex($debug['enabled']);
 $e_code = $e->getCode();
@@ -83,13 +88,13 @@ $errors = error_get_defined_errors();
 
 $allowed_errors = error_get_allowed_errors($rules);  
 
-if($debug['enabled'] === TRUE OR is_string($debug['enabled'])) 
+if(is_string($debug['enabled'])) 
 {
     // Show source code for first exception trace
     // ------------------------------------------------------------------------
     $e_trace['file'] = $e->getFile();
     $e_trace['line'] = $e->getLine();
-    
+
     echo error_write_file_source($e_trace);
     
     if( ! isset($allowed_errors[$e_code]))   // Check debug_backtrace enabled for current error. 
