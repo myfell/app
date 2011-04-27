@@ -357,5 +357,19 @@ $config['global_xss_filtering']  = FALSE;
 */
 $config['proxy_ips']             = '';
 
+/*
+|--------------------------------------------------------------------------
+| Object Query Request Type
+|--------------------------------------------------------------------------
+|
+| If you intend to use object Query library, you have two type request 
+| methods that alled HMVC or CURL. Default is HMVC which is faster 
+| than CURL requests.
+|
+*/
+$config['ob_query_request_type'] = 'HMVC';
+$config['ob_query_service_url']  = 'ob_query/service/start';
+
+
 /* End of file config.php */
 /* Location: ./application/config/config.php */
