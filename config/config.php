@@ -41,17 +41,30 @@ $config['public_folder']         = 'public';
 
 /*
 |--------------------------------------------------------------------------
+| Your ENVIRONMENt. Can be set to any of the following:
+|--------------------------------------------------------------------------
+|
+|   o DEV  - DEVELOPMENT
+|   o TEST - TEST
+|   o QA   - QA
+|   o LIVE - PRODUCTION
+|  
+*/
+$config['env']                  = 'DEV';
+
+/*
+|--------------------------------------------------------------------------
 | Obullo Error Handler Enable / Disable Displaying Errors
 |--------------------------------------------------------------------------
 |  
-| Obullo use error_reporting function default as error_reporting(0), however
-| Obullo can catch all php errors and show them friendly.
+| Obullo use error_reporting function default as error_reporting(0), 
+| however Obullo can catch all php errors and show them friendly.
 |   
 |   0 - Turn off all error reporting (0)
 |   1 - All errors  = E_ALL;
-|   String - Custom Regex Mode
+|   OR string (Custom Regex)
 |
-|   Regex Examples:
+|   String - Custom Regex Mode Examples:
 |
 |   Running errors
 |       $config['error_reporting'] = 'E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR';
@@ -64,7 +77,6 @@ $config['public_folder']         = 'public';
 |       
 |   All errors except notices 
 |       $config['error_reporting'] = 'E_ALL ^ E_NOTICE';
-|
 */
 $config['error_reporting']       = 1;
 
@@ -77,6 +89,8 @@ $config['error_reporting']       = 1;
 | enabled Obullo will give you more details about application errors.
 | For Object dump you will need 32M php memory.To dumping large objects
 | increase your memory_limit from your php.ini file.
+| 
+| Deubug traces should be off which errors needs to continue of execution.
 |
 */
 $config['debug_backtrace']       = array('enabled' => 'E_ALL ^ (E_NOTICE | E_WARNING)', 'padding' => 5);
@@ -356,19 +370,6 @@ $config['global_xss_filtering']  = FALSE;
 |
 */
 $config['proxy_ips']             = '';
-
-/*
-|--------------------------------------------------------------------------
-| Object Query Request Type
-|--------------------------------------------------------------------------
-|
-| If you intend to use object Query library, you have two type request 
-| methods that alled HMVC or CURL. Default is HMVC which is faster 
-| than CURL requests.
-|
-*/
-$config['ob_query_request_type'] = 'HMVC';
-$config['ob_query_service_url']  = 'ob_query/service/start';
 
 
 /* End of file config.php */
