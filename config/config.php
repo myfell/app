@@ -183,7 +183,7 @@ $config['index_page']            = "index.php";
 | 'ORIG_PATH_INFO'  Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol']          = 'PATH_INFO';
+$config['uri_protocol']          = 'AUTO';
 
 /*
 |--------------------------------------------------------------------------
@@ -334,6 +334,9 @@ $config['cookie_prefix']         = "";
 $config['cookie_domain']         = "";
 $config['cookie_path']           = "/";
 $config['cookie_time']           = (7 * 24 * 60 * 60) + time();
+
+// WARNING ! : For all cookie expiration operations time() function must be at the end.
+// Otherwise some cookie and session die functions does not work !
 
 /*
 |--------------------------------------------------------------------------
