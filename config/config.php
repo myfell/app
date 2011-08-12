@@ -3,6 +3,21 @@ defined('BASE') or exit('Access Denied!');
 
 /*
 |--------------------------------------------------------------------------
+| Your ENVIRONMENT. Can be set to any of the following:
+|--------------------------------------------------------------------------
+| When your application goes to live server you need to set 'DEV' environment
+| to 'LIVE' otherwise cookie and some other functionalities does not work.
+|
+|   o DEV  - DEVELOPMENT
+|   o TEST - TEST
+|   o QA   - QA
+|   o LIVE - PRODUCTION
+|
+*/
+$config['env']                  = 'DEV';
+
+/*
+|--------------------------------------------------------------------------
 | Base Site URL
 |--------------------------------------------------------------------------
 |
@@ -10,10 +25,13 @@ defined('BASE') or exit('Access Denied!');
 | WITH a trailing slash:
 | Generally a  "/"  trailing slash enough. Not need to full url of your domain.
 |
-|    Domain Root   "/"
+|    Base Url      "/"
+|    Domain Root   "http://your-domain.com"
 |
 */
 $config['base_url']              = '/';
+$config['domain_root']           = ($config['env'] == 'LIVE') ? 'http://your-domain.com' : 'http://localhost';
+$config['ssl']                   = ($config['env'] == 'LIVE') ? TRUE : FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,19 +56,6 @@ $config['public_url']            = '/';
 |  
 */
 $config['public_folder']         = 'public';
-
-/*
-|--------------------------------------------------------------------------
-| Your ENVIRONMENt. Can be set to any of the following:
-|--------------------------------------------------------------------------
-|
-|   o DEV  - DEVELOPMENT
-|   o TEST - TEST
-|   o QA   - QA
-|   o LIVE - PRODUCTION
-|  
-*/
-$config['env']                  = 'DEV';
 
 /*
 |--------------------------------------------------------------------------
@@ -331,7 +336,7 @@ $config['sess_time_to_update']   = 300;
 |
 */
 $config['cookie_prefix']         = "";
-$config['cookie_domain']         = "";
+$config['cookie_domain']         = ($config['env'] == 'LIVE') ? '.your-domain.com' : '';
 $config['cookie_path']           = "/";
 $config['cookie_time']           = (7 * 24 * 60 * 60) + time();
 
