@@ -54,7 +54,7 @@ defined('BASE') or exit('Access Denied!');
 |
 */
 $routes['default_controller']    = "welcome";  // or welcome/controller name
-$routes['404_override']          = '';
+$routes['404_override']          = '';         // 'welcome/welcome/index';
 
 /*
 |--------------------------------------------------------------------------

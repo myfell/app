@@ -192,6 +192,19 @@ $config['uri_protocol']          = 'AUTO';
 
 /*
 |--------------------------------------------------------------------------
+| URI EXTENSIONS
+|--------------------------------------------------------------------------
+|
+| This item determines allowed uri extensions, if you request an uri like
+| this : http://example.com/welcome/example.json Obullo URI class assign
+| extension name to $this->uri->extension(); function.
+| Default extension is " php ".
+|
+*/
+$config['uri_extensions']        = array('html', 'json', 'xml', 'raw', 'rss');
+
+/*
+|--------------------------------------------------------------------------
 | URL suffix
 |--------------------------------------------------------------------------
 |
