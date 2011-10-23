@@ -201,7 +201,7 @@ $config['uri_protocol']          = 'AUTO';
 | Default extension is " php ".
 |
 */
-$config['uri_extensions']        = array('html', 'json', 'xml', 'raw', 'rss');
+$config['uri_extensions']        = array('php', 'html', 'json', 'xml', 'raw', 'rss');
 
 /*
 |--------------------------------------------------------------------------
