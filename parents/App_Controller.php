@@ -6,8 +6,6 @@ Class App_Controller
     function __autoloader()
     {         
         loader::helper('ob/view');
-
-        // $this->output->profiler();
         
         view_set_folder('view_layout', 'layouts', FALSE);  // you can set directory for view functions.
     } 

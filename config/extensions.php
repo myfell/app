@@ -12,23 +12,20 @@ defined('BASE') or exit('Access Denied!');
 |
 | Congiguration Example
 |
-| module_name -  extension_name  =>  value
+|              module_name - extension_name  = 'value'
 | $extension['module_name']['extension_name'] = '';
 |
 */
-$extensions['application']['sample'] = array(
-                                            'enabled' => FALSE,
-                                            'lib_override'    => array(),
-                                            'helper_override' => array()
-                                            );
+$extensions['application']['e_notifier']['enabled']         = FALSE;
+$extensions['application']['e_notifier']['lib_override']    = array('Exception');
+$extensions['application']['e_notifier']['helper_override'] = array('error');
 
 //-----------------------------------------------------------------
 
-$extensions['welcome']['error_mail'] = array(
-                                            'enabled' => FALSE,
-                                            'lib_override'    => array('Exception'),
-                                            'helper_override' => array('error')
-                                            );
+$extensions['welcome']['ext_name']['enabled']               = FALSE;
+$extensions['welcome']['ext_name']['lib_override']          = array();
+$extensions['welcome']['ext_name']['helper_override']       = array();
+
 
 /* End of file config.php */
 /* Location: ./application/extensions.php */
