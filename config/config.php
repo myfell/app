@@ -14,7 +14,7 @@ defined('BASE') or exit('Access Denied!');
 |   o LIVE - PRODUCTION
 |
 */
-$config['env']                  = 'DEV';
+$config['env']                   = 'DEV';
 
 /*
 |--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ $config['error_reporting']       = 1;
 | For Object dump you will need 32M php memory.To dumping large objects
 | increase your memory_limit from your php.ini file.
 | 
-| Deubug traces should be off which errors needs to continue of execution.
+| Debug traces should be off which errors needs to continue of execution.
 |
 */
 $config['debug_backtrace']       = array('enabled' => 'E_ALL ^ (E_NOTICE | E_WARNING)', 'padding' => 5);

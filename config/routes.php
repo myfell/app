@@ -41,7 +41,7 @@ defined('BASE') or exit('Access Denied!');
 | This route will tell the Router what URI segments to use if those provided
 | in the URL cannot be matched to a valid route.
 |
-*/
+*/ 
 
 /*
 |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ defined('BASE') or exit('Access Denied!');
 |
 */
 $routes['default_controller']    = "welcome";  // or welcome/controller name
-$routes['404_override']          = '';         // 'welcome/welcome/index';
+$routes['404_override']          = '';
 
 /*
 |--------------------------------------------------------------------------
