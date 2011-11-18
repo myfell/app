@@ -1,8 +1,22 @@
 <?php
 defined('BASE') or exit('Access Denied!');  
 
+/*
+| -------------------------------------------------------------------
+| APPLICATION CONSTANTS
+| -------------------------------------------------------------------
+| This file specifies which APPLICATION file constants should be loaded 
+| by default.
+| 
+| Put your APPLICATION constants here.
+|
+| Prototype:
+|
+|	$constant['CONSTANT_NAME'] = 'value';
+|
+*/
 
-// put your application constants here.
+$constant['CONSTANT_NAME'] = '';
                                                           
 
 /* End of file constants.php */
