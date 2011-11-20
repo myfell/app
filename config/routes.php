@@ -53,7 +53,7 @@ defined('BASE') or exit('Access Denied!');
 | this pattern example.com/directory/class/method/id/ 
 |
 */
-$routes['default_controller']    = "welcome";  // or welcome/controller name
+$routes['default_controller']    = "welcome";  // or welcome/controller/method name
 $routes['404_override']          = '';
 
 /*

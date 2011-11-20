@@ -50,6 +50,7 @@ $autoload['helper']     = array('ob/view', 'ob/html', 'ob/url');
 | this will just include file, the library construct params must be array.
 |
 */
+$autoload['lib']        = array();
 
 /*
 | -------------------------------------------------------------------
@@ -82,10 +83,18 @@ $autoload['lang']       = array();
 | -------------------------------------------------------------------
 |  Auto-load Models
 | -------------------------------------------------------------------
+| 
 | Prototype:
 |
-|	$autoload['model'] = array('model1', 'model2');
+|	$autoload['model'] = array('app/model', 'my_modelname');
+| 
+| Prototype using arguments:
 |
+|       $autoload['model'] = array(array('app/model' => '', 'app/my_modelname' => array($construct_params))); 
+|
+|       No Instantiate example
+|
+|       $autoload['model'] = array(array('modelname' => FALSE));  
 */
 
 $autoload['model']      = array();
