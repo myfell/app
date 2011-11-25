@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <?php 
 // Important: Don't change the 404 page css names (body, content, h1) 
-// Some browsers does not support different css names for 404 error pages.        
+// Some browsers does not support different css names.        
 ?>
 
 <style type="text/css">
@@ -12,7 +12,7 @@ body {
 background-color:    #fff;
 margin:              0px;
 font-size:           12px;
-font-family:         Verdana, Sans-serif;
+font-family :        Verdana, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, Geneva, Arial, Sans-serif;
 }
 
 #content  {

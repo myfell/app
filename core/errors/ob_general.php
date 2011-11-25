@@ -3,7 +3,7 @@
 <title>Error</title>
 <style type="text/css">
 #error_general  {
-font-family: verdana;
+font-family : Verdana, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, Geneva, Arial, Sans-serif;
 font-size:12;
 width:99%;
 padding:5px;

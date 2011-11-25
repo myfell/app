@@ -20,7 +20,7 @@ line-height: none;
 #exception_content div.collapsed { display: none; }
 #exception_content div.arguments { }
 #exception_content div.arguments table { 
-font-family: verdana; 
+font-family : Verdana, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, Geneva, Arial, Sans-serif;
 font-size:12; 
 border-collapse: collapse; 
 border-spacing: 0; 
