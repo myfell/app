@@ -1,7 +1,7 @@
 <style type="text/css">
 #exception_content {
 font-family : Verdana, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, Geneva, Arial, Sans-serif;
-font-size:12;
+font-size:12px;
 width:99%;
 padding:5px;
 background-color: #F0F0F0;
@@ -21,7 +21,7 @@ line-height: none;
 #exception_content div.arguments { }
 #exception_content div.arguments table { 
 font-family : Verdana, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, Geneva, Arial, Sans-serif;
-font-size:12; 
+font-size:12px; 
 border-collapse: collapse; 
 border-spacing: 0; 
 background: #fff;  

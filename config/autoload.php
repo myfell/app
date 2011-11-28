@@ -19,10 +19,10 @@ defined('BASE') or exit('Access Denied!');
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['helper'] = array('ob/url', 'ob/file', 'my_helper');
+|	$autoload['helper'] = array('ob/url' => '', 'ob/file' => '', 'my_helper' => '');
 */
 
-$autoload['helper']     = array('ob/view', 'ob/html', 'ob/url');
+$autoload['helper']     = array('ob/view' => '', 'ob/html' => '', 'ob/url' => '');
 
 /*
 | -------------------------------------------------------------------
@@ -31,18 +31,17 @@ $autoload['helper']     = array('ob/view', 'ob/html', 'ob/url');
 | These are the classes located in the obullo/libraries folder
 | or in your application/libraries folder, 
 | or modules/current_module/libraries folder.
-|
 | Prototype:
 |
-|	$autoload['lib'] = array('ob/calendar', 'my_lib');
+|	$autoload['lib'] = array('ob/calendar', 'my_lib' => array('arg1', 'arg2'));
 | 
 | Prototype using arguments:
 |
-|       $autoload['lib'] = array(array('app/auth' => '', 'app/my_library' => array($construct_params))); 
+|       $autoload['lib'] = array('app/my_lib' => array( array($construct_params), $object_name = 'string')); 
 |
 |       No Instantiate example
 |
-|       $autoload['lib'] = array(array('app/auth' => FALSE));  
+|       $autoload['lib'] = array('app/auth' => array(FALSE));  
 | 
 | 
 | NOTE: Using libraries with FALSE means no instantiate 
@@ -58,7 +57,11 @@ $autoload['lib']        = array();
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['config'] = array('config1', 'config2');
+|	$autoload['config'] = array('config1' => '', 'config2' => '');
+| 
+| Prototype using arguments:
+|
+|       $autoload['config'] = array('config1' => array(TRUE), 'config2' => array($sections = TRUE, $fail = FALSE));
 |
 | NOTE: This item is intended for use ONLY if you have created custom
 | config files.  Otherwise, leave it blank.
@@ -73,7 +76,11 @@ $autoload['config']     = array();
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['lang'] = array('lang1', 'lang2');
+|	$autoload['lang'] = array('lang1' => '', 'lang2' => '');
+| 
+| Prototype using arguments:
+|
+|       $autoload['lang'] = array('lang1' => array('english'), 'lang2' => array('german', FALSE));
 |
 */
 
@@ -83,18 +90,18 @@ $autoload['lang']       = array();
 | -------------------------------------------------------------------
 |  Auto-load Models
 | -------------------------------------------------------------------
-| 
 | Prototype:
 |
-|	$autoload['model'] = array('app/model', 'my_modelname');
+|	$autoload['model'] = array('model1' => '', 'model2' => array('arg1', 'arg2'));
 | 
 | Prototype using arguments:
 |
-|       $autoload['model'] = array(array('app/model' => '', 'app/my_modelname' => array($construct_params))); 
+|       $autoload['model'] = array('app/modelname' => array($object_name = 'string', array $construct_params)); 
 |
 |       No Instantiate example
 |
-|       $autoload['model'] = array(array('modelname' => FALSE));  
+|       $autoload['model'] = array('app/modelname' => array(FALSE));   
+|
 */
 
 $autoload['model']      = array();

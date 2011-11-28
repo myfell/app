@@ -64,7 +64,9 @@ $config['public_folder']         = 'public';
 |  
 | Obullo use error_reporting function default as error_reporting(0), 
 | however Obullo can catch all php errors and show them friendly.
-|   
+|
+| @see error constants http://usphp.com/manual/en/errorfunc.constants.php
+|
 |   0 - Turn off all error reporting (0)
 |   1 - All errors  = E_ALL;
 |   OR string (Custom Regex)
@@ -94,9 +96,10 @@ $config['error_reporting']       = 1;
 | enabled Obullo will give you more details about application errors.
 | For Object dump you will need 32M php memory.To dumping large objects
 | increase your memory_limit from your php.ini file.
-| 
-| Debug traces should be off which errors needs to continue of execution.
-|
+|       
+|   To Disable Debugging: array('enabled' => FALSE, 'padding' => 5);
+|   
+|   Custom regexs same as error reporting.
 */
 $config['debug_backtrace']       = array('enabled' => 'E_ALL ^ (E_NOTICE | E_WARNING)', 'padding' => 5);
 
