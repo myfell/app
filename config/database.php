@@ -21,15 +21,15 @@ $database['system']['active_record'] = FALSE;
 | $database['db']['...'] 
 | 
 */
-$database['db']['hostname'] = "localhost";
-$database['db']['username'] = "root";
-$database['db']['password'] = "";
-$database['db']['database'] = "obullo";
-$database['db']['dbdriver'] = "mysql";
-$database['db']['dbh_port'] = "";
-$database['db']['char_set'] = "utf8";
-$database['db']['dsn']      = "";
-$database['db']['options']  = array();  // Example:  array( PDO::ATTR_PERSISTENT => false , 
+$database['db']['hostname']  = "localhost";
+$database['db']['username']  = "root";
+$database['db']['password']  = "";
+$database['db']['database']  = "obullo_test";
+$database['db']['dbdriver']  = "mysql";
+$database['db']['dbh_port']  = "";
+$database['db']['char_set']  = "utf8";
+$database['db']['dsn']       = "";
+$database['db']['options']   = array();  // Example:  array( PDO::ATTR_PERSISTENT => false , 
                                         //                  PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true 
                                         //           ); 
 
