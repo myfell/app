@@ -15,25 +15,24 @@ $database['system']['active_record'] = FALSE;
 | Put your static database configurations here and decide your db variable
 | name. You will use it in the application like this $this->db .
 | 
-| db variable name ( default $this->db )
-|     ------------
-|             |
-| $database['db']['...'] 
+| $database['db']['option']  db variable name ( default $this->db )
+| 
+| Prototype Options:  array( PDO::ATTR_PERSISTENT => FALSE , 
+|                            PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => TRUE
+|                          ); 
 | 
 */
 $database['db']['hostname']  = "localhost";
 $database['db']['username']  = "root";
 $database['db']['password']  = "";
-$database['db']['database']  = "obullo_test";
+$database['db']['database']  = "";
 $database['db']['dbdriver']  = "mysql";
 $database['db']['dbh_port']  = "";
 $database['db']['char_set']  = "utf8";
 $database['db']['dsn']       = "";
-$database['db']['options']   = array();  // Example:  array( PDO::ATTR_PERSISTENT => false , 
-                                        //                  PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true 
-                                        //           ); 
+$database['db']['options']   = array( PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => TRUE );
 
-// second database
+
 $database['db2']['hostname'] = "localhost";
 $database['db2']['username'] = "root";
 $database['db2']['password'] = "";
