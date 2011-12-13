@@ -38,8 +38,7 @@ $config['ssl']                   = ($config['env'] == 'LIVE') ? TRUE : FALSE;
 | Public URL (Static Files)
 |--------------------------------------------------------------------------
 |
-| URL to your Static Files.
-| http://static.example.com/
+| Public Base URL to your Static Files.
 |
 */
 $config['public_url']            = '/';
