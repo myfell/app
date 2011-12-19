@@ -5,6 +5,7 @@ defined('BASE') or exit('Access Denied!');
 |--------------------------------------------------------------------------
 | Your ENVIRONMENT. Can be set to any of the following:
 |--------------------------------------------------------------------------
+|
 | When your application goes to live server you need to set 'DEV' environment
 | to 'LIVE' otherwise cookie and some other functionalities does not work.
 |
@@ -132,8 +133,7 @@ $config['log_threshold']         = 2;
 | Leave this BLANK unless you would like to set something other than the default
 | application/logs/ folder.  ( Use a full server path with trailing slash. )
 | 
-| Command Line Task's log files default path is
-| applicat/logs/cmd/
+| Prototype: APP .'core'. DS .'logs'. DS;
 |                  
 */
 $config['log_path']              = '';
