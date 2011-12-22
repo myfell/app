@@ -3,22 +3,6 @@ defined('BASE') or exit('Access Denied!');
 
 /*
 |--------------------------------------------------------------------------
-| Your ENVIRONMENT. Can be set to any of the following:
-|--------------------------------------------------------------------------
-|
-| When your application goes to live server you need to set 'DEV' environment
-| to 'LIVE' otherwise cookie and some other functionalities does not work.
-|
-|   o DEV  - DEVELOPMENT
-|   o TEST - TEST
-|   o QA   - QA
-|   o LIVE - PRODUCTION
-|
-*/
-$config['env']                   = 'DEV';
-
-/*
-|--------------------------------------------------------------------------
 | Base Site URL
 |--------------------------------------------------------------------------
 |
@@ -31,8 +15,8 @@ $config['env']                   = 'DEV';
 |
 */
 $config['base_url']              = '/';
-$config['domain_root']           = ($config['env'] == 'LIVE') ? 'http://your-domain.com' : 'http://localhost';
-$config['ssl']                   = ($config['env'] == 'LIVE') ? TRUE : FALSE;
+$config['domain_root']           = (ENV == 'LIVE') ? 'http://your-domain.com' : 'http://localhost';
+$config['ssl']                   = (ENV == 'LIVE') ? TRUE : FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +53,7 @@ $config['public_folder']         = 'public';
 |
 |   0 - Turn off all error reporting (0)
 |   1 - All errors  = E_ALL;
-|   OR string (Custom Regex)
+|   OR String (Custom Regex)
 |
 |   String - Custom Regex Mode Examples:
 |
@@ -351,7 +335,7 @@ $config['sess_time_to_update']   = 300;
 |
 */
 $config['cookie_prefix']         = "";
-$config['cookie_domain']         = ($config['env'] == 'LIVE') ? '.your-domain.com' : '';
+$config['cookie_domain']         = (ENV == 'LIVE') ? '.your-domain.com' : '';
 $config['cookie_path']           = "/";
 $config['cookie_time']           = (7 * 24 * 60 * 60) + time();
 
@@ -393,6 +377,39 @@ $config['global_xss_filtering']  = FALSE;
 |
 */
 $config['proxy_ips']             = '';
+
+/*
+|--------------------------------------------------------------------------
+| Output Cache Directory Path
+|--------------------------------------------------------------------------
+|
+| Leave this BLANK unless you would like to set something other than the
+| default  " application/core/cache/ " folder. 
+| 
+| Use a full server path with trailing slash.
+|
+*/
+$cache['cache_path']             = '';
+
+/*
+|--------------------------------------------------------------------------
+| Output Compression
+|--------------------------------------------------------------------------
+|
+| Enables Gzip output compression for faster page loads.  When enabled,
+| the output class will test whether your server supports Gzip.
+| Even if it does, however, not all browsers support compression
+| so enable only if you are reasonably sure your visitors can handle it.
+|
+| VERY IMPORTANT:  If you are getting a blank page when compression is enabled it
+| means you are prematurely outputting something to your browser. It could
+| even be a line of whitespace at the end of one of your scripts.  For
+| compression to work, nothing can be sent before the output buffer is called
+| by the output class.  Do not "echo" any values with compression enabled.
+|
+*/
+$cache['compress_output']       = FALSE;
+$cache['compression_level']     = 8;
 
 
 /* End of file config.php */
