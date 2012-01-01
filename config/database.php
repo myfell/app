@@ -18,19 +18,19 @@ $database['system']['active_record'] = FALSE;
 | $database['db']['option']  db variable name ( default $this->db )
 | 
 | Prototype Options:  array( PDO::ATTR_PERSISTENT => FALSE , 
-|                            PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => TRUE
+|                            PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => FALSE
 |                          ); 
 | 
 */
 $database['db']['hostname']  = "localhost";
 $database['db']['username']  = "root";
 $database['db']['password']  = "";
-$database['db']['database']  = "";
+$database['db']['database']  = "obullo";
 $database['db']['dbdriver']  = "mysql";
 $database['db']['dbh_port']  = "";
 $database['db']['char_set']  = "utf8";
 $database['db']['dsn']       = "";
-$database['db']['options']   = array( PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => TRUE );
+$database['db']['options']   = array();
 
 
 $database['db2']['hostname'] = "localhost";

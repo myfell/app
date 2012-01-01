@@ -16,6 +16,18 @@ defined('BASE') or exit('Access Denied!');
 */
 $config['base_url']              = '/';
 $config['domain_root']           = (ENV == 'LIVE') ? 'http://your-domain.com' : 'http://localhost';
+
+/*
+|--------------------------------------------------------------------------
+| SSL Config
+|--------------------------------------------------------------------------
+| Note : 
+| if your HTTP server NGINX add below the line to your fastcgi_params file.
+|  
+|   # fastcgi_param  HTTPS		  $ssl_protocol;
+|
+| then $_SERVER['HTTPS'] variable will be available for PHP (fastcgi).
+*/
 $config['ssl']                   = (ENV == 'LIVE') ? TRUE : FALSE;
 
 /*
@@ -332,12 +344,13 @@ $config['sess_time_to_update']   = 300;
 | 'cookie_prefix' = Set a prefix if you need to avoid collisions
 | 'cookie_domain' = Set to .your-domain.com for site-wide cookies
 | 'cookie_path'   =  Typically will be a forward slash
-|
+| 'cookie_secure' =  Cookies will only be set if a secure HTTPS connection exists.
 */
 $config['cookie_prefix']         = "";
 $config['cookie_domain']         = (ENV == 'LIVE') ? '.your-domain.com' : '';
 $config['cookie_path']           = "/";
 $config['cookie_time']           = (7 * 24 * 60 * 60) + time();
+$config['cookie_secure']	 = FALSE;
 
 // WARNING ! : For all cookie expiration operations time() function must be at the end.
 // Otherwise some cookie and session die functions does not work !
@@ -365,6 +378,23 @@ $config['rewrite_short_tags']    = FALSE;
 */
 $config['global_xss_filtering']  = FALSE;
                             
+/*
+|--------------------------------------------------------------------------
+| Cross Site Request Forgery
+|--------------------------------------------------------------------------
+| Enables a CSRF cookie token to be set. When set to TRUE, token will be
+| checked on a submitted form. If you are accepting user data, it is strongly
+| recommended CSRF protection be enabled.
+|
+| 'csrf_token_name'  = The token name
+| 'csrf_cookie_name' = The cookie name
+| 'csrf_expire'      = The number in seconds the token should expire.
+*/
+$config['csrf_protection']       = TRUE;
+$config['csrf_token_name']       = 'csrf_token_name';
+$config['csrf_cookie_name']      = 'csrf_cookie_name';
+$config['csrf_expire']           = 7200;
+
 /*
 |--------------------------------------------------------------------------
 | Reverse Proxy IPs
