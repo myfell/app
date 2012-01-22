@@ -10,9 +10,11 @@ defined('BASE') or exit('Access Denied!');
 | /modules/extension_name folder. And if extension has a main library
 | you can call it using loader::ext('sample');.
 |
-| Congiguration Example / module_name - extension_name  = 'value'
+| Prototype:
 |
-| $extensions['module_name']['extension_name']['option'] = '';
+| $extensions['module_name']['extension_name']['enabled']         = TRUE;
+| $extensions['module_name']['extension_name']['lib_override']    = array( .. , .. );
+| $extensions['module_name']['extension_name']['helper_override'] = array( .. , .. );
 |
 */
 $extensions['application']['e_notifier']['enabled']         = FALSE;

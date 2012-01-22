@@ -81,7 +81,7 @@ $config['public_folder']         = 'public';
 |   All errors except notices 
 |       $config['error_reporting'] = 'E_ALL ^ E_NOTICE';
 */
-$config['error_reporting']       = 1;
+$config['error_reporting']       = (ENV == 'LIVE') ? 0 : 1;
 
 /*
 |--------------------------------------------------------------------------
@@ -288,12 +288,16 @@ $config['permitted_uri_chars']   = 'a-z 0-9~%.:_-';
 | if subolder exist in your /controllers folder invoke this
 | example.com/index.php?d=directory&s=subfolder&c=controller&m=function
 |
+| if submodule exist in your /modules folder invoke this
+| example.com/index.php?sub=modulename&d=directory&c=controller&m=function
+|
 | Please note that some of the helpers won't work as expected when
 | this feature is enabled, since Obullo is designed primarily to
 | use segment based URLs.
 |
 */
-$config['enable_query_strings']  = TRUE;
+$config['enable_query_strings']  = FALSE;
+$config['submodule_trigger']     = 'sub';   
 $config['directory_trigger']     = 'd';   
 $config['subfolder_trigger']     = 's';   
 $config['controller_trigger']    = 'c';
