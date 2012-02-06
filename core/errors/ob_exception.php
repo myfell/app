@@ -35,8 +35,7 @@ background: #fff;
 </style>
 
 <script type="text/javascript">
-function Obullo_Element() 
-{
+function Obullo_Element() {
     var elements = new Array();
     for (var i = 0; i < arguments.length; i++) 
     {
@@ -50,8 +49,7 @@ function Obullo_Element()
     return elements;
 }
 
-function Obullo_Error_Toggle(obj)
-{
+function Obullo_Error_Toggle(obj){
     var el = Obullo_Element(obj);
     if (el == null){
         return false;

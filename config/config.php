@@ -32,10 +32,10 @@ $config['ssl']                   = (ENV == 'LIVE') ? TRUE : FALSE;
 
 /*
 |--------------------------------------------------------------------------
-| Public URL (Static Files)
+| Public Site URL
 |--------------------------------------------------------------------------
 |
-| Public Base URL to your Static Files.
+| URL to your Static Files, Like Base URl. 
 |
 */
 $config['public_url']            = '/';
@@ -114,12 +114,13 @@ $config['debug_backtrace']       = array('enabled' => 'E_ALL ^ (E_NOTICE | E_WAR
 |    2 = Debug Messages
 |    3 = Informational Messages
 |    4 = All Messages
+|    5 = All Module Messages
 |
 | For a live site you'll usually only enable Errors (1) to be logged otherwise
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold']         = 2;
+$config['log_threshold']         = (ENV == 'LIVE') ? 1 : 4;
 
 /*
 |--------------------------------------------------------------------------
@@ -129,7 +130,7 @@ $config['log_threshold']         = 2;
 | Leave this BLANK unless you would like to set something other than the default
 | application/logs/ folder.  ( Use a full server path with trailing slash. )
 | 
-| Prototype: APP .'core'. DS .'logs'. DS;
+|   Prototype: APP .'core'. DS .'logs'. DS;
 |                  
 */
 $config['log_path']              = '';
@@ -347,17 +348,18 @@ $config['sess_time_to_update']   = 300;
 |
 | 'cookie_prefix' = Set a prefix if you need to avoid collisions
 | 'cookie_domain' = Set to .your-domain.com for site-wide cookies
-| 'cookie_path'   =  Typically will be a forward slash
-| 'cookie_secure' =  Cookies will only be set if a secure HTTPS connection exists.
+| 'cookie_path'   = Typically will be a forward slash
+| 'cookie_secure' = Cookies will only be set if a secure HTTPS connection exists.
+|  
+|  VERY IMPORTANT: For all cookie_time expirations, time() function must 
+|  be at the end. Otherwise some cookie and session die functions will not work.
+|
 */
 $config['cookie_prefix']         = "";
 $config['cookie_domain']         = (ENV == 'LIVE') ? '.your-domain.com' : '';
 $config['cookie_path']           = "/";
 $config['cookie_time']           = (7 * 24 * 60 * 60) + time();
 $config['cookie_secure']	 = FALSE;
-
-// WARNING ! : For all cookie expiration operations time() function must be at the end.
-// Otherwise some cookie and session die functions does not work !
 
 /*
 |--------------------------------------------------------------------------
