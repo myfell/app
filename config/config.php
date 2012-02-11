@@ -35,7 +35,7 @@ $config['ssl']                   = (ENV == 'LIVE') ? TRUE : FALSE;
 | Public Site URL
 |--------------------------------------------------------------------------
 |
-| URL to your Static Files, Like Base URl. 
+| URL to your Asset Files, Like Base URl. 
 |
 */
 $config['public_url']            = '/';
@@ -45,13 +45,15 @@ $config['public_url']            = '/';
 | Public Folder Name
 |--------------------------------------------------------------------------
 |
-|    /public
-|    /public/js
-|    /public/css
-|    /public/images
+| You can rename your "assets" folder name.
+|
+|    /public_folder
+|    /public_folder/js
+|    /public_folder/css
+|    /public_folder/images
 |  
 */
-$config['public_folder']         = 'public';
+$config['public_folder']         = 'assets';
 
 /*
 |--------------------------------------------------------------------------
