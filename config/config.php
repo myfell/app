@@ -45,7 +45,7 @@ $config['public_url']            = '/';
 | Public Folder Name
 |--------------------------------------------------------------------------
 |
-| You can rename your "assets" folder name.
+| You can rename your "assets" folder.
 |
 |    /public_folder
 |    /public_folder/js
@@ -188,8 +188,10 @@ $config['index_page']            = "index.php";
 | 'REQUEST_URI'     Uses the REQUEST_URI
 | 'ORIG_PATH_INFO'  Uses the ORIG_PATH_INFO
 |
+|  You can use parameters like http://example.com/login?param=1&param2=yes
+|
 */
-$config['uri_protocol']          = 'AUTO';
+$config['uri_protocol']          = 'AUTO';  // Generally REQUEST_URI
 
 /*
 |--------------------------------------------------------------------------
