@@ -301,7 +301,7 @@ $config['permitted_uri_chars']   = 'a-z 0-9~%.:_-';
 | use segment based URLs.
 |
 */
-$config['enable_query_strings']  = FALSE;
+$config['enable_query_strings']  = TRUE;
 $config['submodule_trigger']     = 'sub';   
 $config['directory_trigger']     = 'd';   
 $config['subfolder_trigger']     = 's';   
@@ -337,7 +337,7 @@ $config['encryption_key']        = "";
 $config['sess_cookie_name']      = 'ob_session';
 $config['sess_expiration']       = 7200;
 $config['sess_die_cookie']       = FALSE;
-$config['sess_encrypt_cookie']   = FALSE;
+$config['sess_encrypt_cookie']   = TRUE;
 $config['sess_driver']           = 'native';  // cookie | database
 $config['sess_db_var']           = 'db';            
 $config['sess_table_name']       = 'ob_sessions';
