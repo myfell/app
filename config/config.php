@@ -290,9 +290,6 @@ $config['permitted_uri_chars']   = 'a-z 0-9~%.:_-';
 | invoke your controllers and its functions:
 | example.com/index.php?d=directory&c=controller&m=function
 |
-| if subolder exist in your /controllers folder invoke this
-| example.com/index.php?d=directory&s=subfolder&c=controller&m=function
-|
 | if submodule exist in your /modules folder invoke this
 | example.com/index.php?sub=modulename&d=directory&c=controller&m=function
 |
@@ -304,7 +301,6 @@ $config['permitted_uri_chars']   = 'a-z 0-9~%.:_-';
 $config['enable_query_strings']  = TRUE;
 $config['submodule_trigger']     = 'sub';   
 $config['directory_trigger']     = 'd';   
-$config['subfolder_trigger']     = 's';   
 $config['controller_trigger']    = 'c';
 $config['function_trigger']      = 'm';
 
