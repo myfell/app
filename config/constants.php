@@ -18,4 +18,4 @@ defined('BASE') or exit('Access Denied!');
 
 
 /* End of file constants.php */
-/* Location: ./application/config/constants.php */
+/* Location: .app/config/constants.php */

@@ -22,3 +22,7 @@ defined('BASE') or exit('Access Denied!');
 */
 
 $autorun['function']   = array();
+
+
+/* End of file autorun.php */
+/* Location: .app/config/autorun.php */

@@ -130,7 +130,7 @@ $config['log_threshold']         = (ENV == 'LIVE') ? 1 : 4;
 |--------------------------------------------------------------------------
 |
 | Leave this BLANK unless you would like to set something other than the default
-| application/logs/ folder.  ( Use a full server path with trailing slash. )
+| app/logs/ folder.  ( Use a full server path with trailing slash. )
 | 
 |   Prototype: APP .'core'. DS .'logs'. DS;
 |                  
@@ -334,7 +334,7 @@ $config['sess_cookie_name']      = 'ob_session';
 $config['sess_expiration']       = 7200;
 $config['sess_die_cookie']       = FALSE;
 $config['sess_encrypt_cookie']   = TRUE;
-$config['sess_driver']           = 'native';  // cookie | database
+$config['sess_driver']           = 'native';  // cookie | database | mongodb
 $config['sess_db_var']           = 'db';            
 $config['sess_table_name']       = 'ob_sessions';
 $config['sess_match_ip']         = FALSE;
@@ -420,7 +420,7 @@ $config['proxy_ips']             = '';
 |--------------------------------------------------------------------------
 |
 | Leave this BLANK unless you would like to set something other than the
-| default  " application/core/cache/ " folder. 
+| default  " app/core/cache/ " folder. 
 | 
 | Use a full server path with trailing slash.
 |
@@ -449,4 +449,4 @@ $cache['compression_level']     = 8;
 
 
 /* End of file config.php */
-/* Location: ./application/config/config.php */
+/* Location: .app/config/config.php */

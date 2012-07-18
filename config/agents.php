@@ -176,4 +176,4 @@ $agents['robots'] = array(
 				        );
 
 /* End of file agents.php */
-/* Location: .application/config/agents.php */
+/* Location: .app/config/agents.php */

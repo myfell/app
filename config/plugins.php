@@ -25,3 +25,6 @@ defined('BASE') or exit('Access Denied!');
 
 $config['plugin_name'] = array();
 
+
+/* End of file plugins.php */
+/* Location: .app/config/plugins.php */
