@@ -3,9 +3,10 @@ defined('BASE') or exit('Access Denied!');
 
 /*
 |--------------------------------------------------------------------------
-| Mongo Db Config 
+| Memcached Config 
 |--------------------------------------------------------------------------
-| Mongodb database api configuration file.
+| Default 
+| Memcache api configuration file
 | 
 | Prototype: 
 |
@@ -13,8 +14,5 @@ defined('BASE') or exit('Access Denied!');
 | 
 */
 
-$config['host']     = 'localhost';
-$config['port']     = '27017';
-$config['database'] = '';
-$config['username'] = '';
-$config['password'] = '';
+$config['mem_host'] = "localhost";
+$config['mem_port'] = "11211";
