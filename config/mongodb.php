@@ -9,12 +9,12 @@ defined('BASE') or exit('Access Denied!');
 | 
 | Prototype: 
 |
-|   $config['key'] = value;
+|   $mongodb['key'] = value;
 | 
 */
 
-$config['host']     = 'localhost';
-$config['port']     = '27017';
-$config['database'] = '';
-$config['username'] = '';
-$config['password'] = '';
+$mongodb['host']     = (ENV == 'LIVE') ? 'localhost' : 'localhost';
+$mongodb['port']     = '27017';
+$mongodb['database'] = '';
+$mongodb['username'] = '';
+$mongodb['password'] = '';

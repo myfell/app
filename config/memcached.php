@@ -10,9 +10,9 @@ defined('BASE') or exit('Access Denied!');
 | 
 | Prototype: 
 |
-|   $config['key'] = value;
+|   $memcached['key'] = value;
 | 
 */
 
-$config['mem_host'] = "localhost";
-$config['mem_port'] = "11211";
+$memcached['host'] = (ENV == 'LIVE') ? 'localhost' : 'localhost';
+$memcached['port'] = '11211';
