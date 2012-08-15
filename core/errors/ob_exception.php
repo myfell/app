@@ -167,7 +167,16 @@ if(is_string($debug['enabled']))
                             {
                                 $class_info.= '<tr>';
                                 $class_info.= '<td>'.$arg_key.'</td>';
-                                $class_info.= '<td>'.error_dump_argument($arg_val).'</td>';
+   
+                                if($trace['function'] == 'pdo_connect' AND ($arg_key == 2 OR $arg_key == 1)) // hide db password
+                                {
+                                    $class_info.= '<td>***********</td>';
+                                } 
+                                else 
+                                {
+                                    $class_info.= '<td>'.error_dump_argument($arg_val).'</td>';
+                                }
+                                
                                 $class_info.= '</tr>'; 
                             }
                             $class_info.= '</table>';
