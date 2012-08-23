@@ -313,7 +313,7 @@ $config['function_trigger']      = 'm';
 | enabled you MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key']        = "";
+$config['encryption_key']        = "your-secret-key";
 
 /*
 |--------------------------------------------------------------------------
@@ -334,7 +334,7 @@ $config['sess_cookie_name']      = 'ob_session';
 $config['sess_expiration']       = 7200;
 $config['sess_die_cookie']       = FALSE;
 $config['sess_encrypt_cookie']   = TRUE;
-$config['sess_driver']           = 'database';  // cookie | database | mongodb | memcached
+$config['sess_driver']           = 'native';  // cookie | database | mongodb | memcached
 $config['sess_db_var']           = 'db';            
 $config['sess_table_name']       = 'ob_sessions';
 $config['sess_match_ip']         = FALSE;
