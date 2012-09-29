@@ -3,18 +3,16 @@ defined('BASE') or exit('Access Denied!');
 
 /*
 |--------------------------------------------------------------------------
-| Base Site URL
+| Base Settings
 |--------------------------------------------------------------------------
 |
-| URL to your Obullo root. Typically this will be your base URL,
-| WITH a trailing slash:
-| Generally a  "/"  trailing slash enough. Not need to full url of your domain.
-|
-|    Base Url      "/"
-|    Domain Root   "http://your-domain.com"
+|    Base Url      "/"                       URL to your Obullo root, generally a '/' trailing slash.
+|    Domain Name   "DomainName"              Your domain nickname.
+|    Domain Root   "http://your-domain.com"  Full url of your domain.
 |
 */
 $config['base_url']              = '/';
+$config['domain_name']           = 'DomainName';
 $config['domain_root']           = (ENV == 'LIVE') ? 'http://your-domain.com' : 'http://localhost';
 
 /*
@@ -35,7 +33,7 @@ $config['ssl']                   = (ENV == 'LIVE') ? TRUE : FALSE;
 | Public Site URL
 |--------------------------------------------------------------------------
 |
-| URL to your Asset Files, Like Base URl. 
+| URL to your Asset Files, Like Base URL. 
 |
 */
 $config['public_url']            = '/';
@@ -171,7 +169,7 @@ $config['time_reference']        = 'local';
 | variable so that it is blank.
 |
 */
-$config['index_page']            = "index.php";
+$config['index_page']            = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -355,9 +353,9 @@ $config['sess_time_to_update']   = 300;
 |  be at the end. Otherwise some cookie and session die functions will not work.
 |
 */
-$config['cookie_prefix']         = "";
+$config['cookie_prefix']         = '';
 $config['cookie_domain']         = (ENV == 'LIVE') ? '.your-domain.com' : '';
-$config['cookie_path']           = "/";
+$config['cookie_path']           = '/';
 $config['cookie_time']           = (7 * 24 * 60 * 60) + time();
 $config['cookie_secure']	 = FALSE;
 
