@@ -76,7 +76,7 @@ if(count($sql) > 0)
 <span class="errorfile"><?php echo error_secure_path($e->getFile()) ?><? echo $code; ?><? echo ' ( Line : '.$e->getLine().' ) '; ?></span>
 
 <?php 
-$debug  = config_item('debug_backtrace');
+$debug  = config('debug_backtrace');
 
 if($debug['enabled'] === TRUE OR $debug['enabled'] == 1)  // Covert to readable format
 {
