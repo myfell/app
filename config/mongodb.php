@@ -13,8 +13,45 @@ defined('BASE') or exit('Access Denied!');
 | 
 */
 
-$mongodb['host']     = (ENV == 'LIVE') ? 'localhost' : 'localhost';
-$mongodb['port']     = '27017';
-$mongodb['database'] = '';
-$mongodb['username'] = '';
-$mongodb['password'] = '';
+$mongodb['host']         = 'localhost';
+$mongodb['port']         = '27017';
+$mongodb['database']     = '';
+$mongodb['username']     = '';
+$mongodb['password']     = '';
+
+/*
+|--------------------------------------------------------------------------
+| Persistent connections
+|--------------------------------------------------------------------------
+|
+*/
+$mongodb['persist']      = TRUE;
+$mongodb['persist_key']  = 'ob_mongo_persist';
+
+/*
+|--------------------------------------------------------------------------
+| Safe Queries
+|--------------------------------------------------------------------------
+| Writing speed and safety options.
+| 
+| Options:
+|
+|   none  = Default, high speed.
+|   safe  = The database has receieved and executed the query
+|   fysnc = as above + the change has been committed to harddisk. 
+|   ( NOTE: Will introduce a performance penalty ).
+|
+*/
+$mongodb['query_safety'] = 'safe';
+
+/*
+|--------------------------------------------------------------------------
+| Connection Flag
+|--------------------------------------------------------------------------
+| If you are having connection problems try change set to TRUE.
+|
+*/
+$mongodb['host_db_flag'] = FALSE;
+
+/* End of file mongodb.php */
+/* Location: .application/config/mongodb.php */
