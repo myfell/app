@@ -51,7 +51,8 @@ $mongodb['query_safety'] = 'safe';
 | If you are having connection problems try change set to TRUE.
 |
 */
+$mongodb['timeout']      = 100;
 $mongodb['host_db_flag'] = FALSE;
 
 /* End of file mongodb.php */
-/* Location: .application/config/mongodb.php */
+/* Location: .app/config/mongodb.php */
