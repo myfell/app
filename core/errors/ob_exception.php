@@ -60,7 +60,7 @@ function Obullo_Error_Toggle(obj){
 
 <div id="exception_content">
 
-<b>(<?php echo $type; ?>): </b> <?php echo error_secure_path($e->getMessage(), true); ?> <br />
+<b>(<?php echo $type; ?>):  <?php echo error_secure_path($e->getMessage(), true); ?></b><br />
 
 <?php 
 if(count($sql) > 0) 
