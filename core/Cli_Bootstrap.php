@@ -56,7 +56,7 @@ set_time_limit(0);
 | operations.
 | 
 */
-ini_set('memory_limit', '1000M');
+ini_set('memory_limit', '100000M');
 
 
 // Put your functions here ..     
