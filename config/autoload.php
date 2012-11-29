@@ -17,12 +17,15 @@ defined('BASE') or exit('Access Denied!');
 | -------------------------------------------------------------------
 |  Auto-load Helper Files
 | -------------------------------------------------------------------
-| Prototype:
+| Prototypes:
 |
-|	$autoload['helper'] = array('ob/url' => '', 'ob/file' => '', 'my_helper' => '');
+|       $autoload['helper']['ob/view']    = '';  // Value must be empty
+|       $autoload['helper']['my_helper']  = '';
 */
 
-$autoload['helper']     = array('ob/view' => '', 'ob/html' => '', 'ob/url' => '');
+$autoload['helper']['ob/view']  = '';
+$autoload['helper']['ob/html']  = '';
+$autoload['helper']['ob/url']   = '';
 
 /*
 | -------------------------------------------------------------------
@@ -37,11 +40,11 @@ $autoload['helper']     = array('ob/view' => '', 'ob/html' => '', 'ob/url' => ''
 | 
 | Prototype using arguments:
 |
-|       $autoload['lib'] = array('app/my_lib' => array( array($construct_params), $object_name = 'string')); 
+|       $autoload['lib']['app/mylib'] = array( array($construct_params), $object_name = 'string')); 
 |
 |       No Instantiate example
 |
-|       $autoload['lib'] = array('app/auth' => array(FALSE));  
+|       $autoload['lib']['app/anylib'] = array(FALSE);
 | 
 | 
 | NOTE: Using libraries with FALSE means no instantiate 
@@ -97,10 +100,12 @@ $autoload['lang']       = array();
 | Prototype using arguments:
 |
 |       $autoload['model'] = array('app/modelname' => array($object_name = 'string', array $construct_params)); 
+|       $autoload['model']['app/modelname'] = array($param1, $param2); 
 |
 |       No Instantiate example
 |
 |       $autoload['model'] = array('app/modelname' => array(FALSE));   
+|       $autoload['model']['app/modelname'] = array(FALSE);   
 |
 */
 
