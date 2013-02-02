@@ -311,7 +311,7 @@ $config['function_trigger']      = 'm';
 | enabled you MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key']        = "your-secret-key";
+$config['encryption_key']        = "write-your-secret-key";
 
 /*
 |--------------------------------------------------------------------------

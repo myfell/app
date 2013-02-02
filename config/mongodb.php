@@ -25,7 +25,7 @@ $mongodb['password']     = '';
 |--------------------------------------------------------------------------
 |
 */
-$mongodb['persist']      = TRUE;
+$mongodb['persist']      = FALSE;
 $mongodb['persist_key']  = 'ob_mongo_persist';
 
 /*
